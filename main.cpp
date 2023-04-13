@@ -38,7 +38,7 @@ int main() {
     cin >> n;
 
     // Vector to store the processes
-    vector<Process> processes;
+    vector<Process*> processes;
     // Input the arrival times and burst times of the processes
     for (int i = 0; i < n; i++) {
         Process p;
@@ -54,16 +54,16 @@ int main() {
     sort(processes.begin(), processes.end(), sortByArrivalTime);
 
     // Vector to store the executed order of the processes
-    vector<Process> executedProcesses;
+    vector<Process*> executedProcesses;
 
     // Current time
     int currentTime = 0;
     int cpuTime = 0;
 
     // Queues to store the processes
-    queue<Process> q1Queue;
-    queue<Process> q2Queue;
-    queue<Process> q3Queue;
+    queue<Process*> q1Queue;
+    queue<Process*> q2Queue;
+    queue<Process*> q3Queue;
 
     // Adding the processes to their respective queues based on arrival time
     for (int i = 0; i < n; i++) {
